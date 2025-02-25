@@ -1,30 +1,43 @@
 // src/Components/Header.jsx
 
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Button, Flex } from '@chakra-ui/react';
 
-const Header = () => {
+interface HeaderProps {
+	showMap: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ showMap }) => {
 	return (
 		<div>
-			<div style={{ textAlign: 'center' }}>
-				<h1 style={{ color: 'green' }}>GeeksForGeeks</h1>
-				<p>We are learning routes in Vite project</p>
-				<nav>
-					<ul style={{ listStyleType: 'none', padding: 0 }}>
-						{/* <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/dsa">DSA</Link>
-            </li> */}
-						<li>
-							<Link to='/test'>Contests</Link>
-						</li>
-					</ul>
-				</nav>
-			</div>{' '}
+			<h2>Testing my h2</h2>
+			<Flex
+				as='header'
+				height='60px'
+				bg='gray.100'
+				justify='center'
+				align='center'
+			>
+				<Button
+					mr={4}
+					size='sm'
+					variant='surface'
+					colorPalette='gray.400'
+					id='kearney_poi'
+					onClick={showMap}
+				>
+					Button 1
+				</Button>
+				<Button
+					size='sm'
+					variant='surface'
+					colorPalette='gray.400'
+					id='kearney_roads'
+					onClick={showMap}
+				>
+					Button 2
+				</Button>
+			</Flex>
 		</div>
 	);
 };

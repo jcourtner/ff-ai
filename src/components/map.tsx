@@ -23,6 +23,7 @@ function Mapbox() {
 			mapRef.current.remove();
 		};
 	}, []);
+
 	return (
 		<>
 			<div id='map-container' ref={mapContainerRef} className='mapbox-map' />{' '}
