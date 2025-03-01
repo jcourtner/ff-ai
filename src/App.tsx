@@ -9,60 +9,54 @@ import Mapbox from './components/map';
 import './App.css';
 
 function Home() {
-	// const [kearneyPoiData, setKearneyPoiData] = useState<{ [key: string]: any }>({});
-	// const [kearneyRoadsData, setKearneyRoadsData] = useState<{[key: string]: any}>({});
 	const [geoJsonCache, setGeoJsonCache] = useState<{ [key: string]: any }>({});
 
-	const [activeLayers, setActiveLayers] = useState<{
+	const [activeSource, setActiveSource] = useState<{
 		[key: string]: boolean;
 	}>({ kearney_poi: false, kearney_roads: false });
 
-	const fetchData = async (layer: string) => {
+	const fetchData = async (source: string) => {
 		try {
-			const url = `./src/geoJson/${layer}.json`;
+			const url = `./src/geoJson/${source}.json`;
 			const response = await fetch(url);
 			if (!response) throw new Error('network error');
 
-			const layerData = await response.json();
+			const sourceData = await response.json();
 
-			console.log('successful fetch, geoJson data', layerData);
+			console.log('successful fetch, geoJson data', sourceData);
 
 			setGeoJsonCache((prev) => ({
 				...prev,
-				[layer]: layerData,
+				[source]: sourceData,
 			}));
-
-			return layerData;
 		} catch (err) {
 			console.log(err);
-			return null;
 		}
 	};
 
 	const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-		const currLayer = event.target.id;
-		const isActive = activeLayers[currLayer] ? false : true;
+		const currSource = event.target.id;
+		const isActive = activeSource[currSource] ? false : true;
 
-		setActiveLayers((prev) => ({ ...prev, [currLayer]: isActive }));
+		setActiveSource((prev) => ({ ...prev, [currSource]: isActive }));
 
 		// check if geoJson is already in the cache
-		if (isActive === true && !geoJsonCache[currLayer]) {
-			await fetchData(currLayer);
+		if (isActive === true && !geoJsonCache[currSource]) {
+			await fetchData(currSource);
 		}
 	};
-	// use effect can watch active layers for changes
-	// useEffect(() => {
-	// 	//logic goes here?
-	// }, [activeLayers]);
+
 	return (
 		<div className='app-container'>
-			<Header showMap={handleClick} activeLayers={activeLayers} />
+			<Header showMap={handleClick} activeSources={activeSource} />
 			<div className='content-container'>
-				<div className='table-container'>
-					<DataTable />
-				</div>
+				{activeSource.kearney_poi && (
+					<div className='table-container'>
+						<DataTable />
+					</div>
+				)}
 				<div className='map-container'>
-					<Mapbox activeLayers={activeLayers} geoJsonCache={geoJsonCache} />
+					<Mapbox activeSources={activeSource} geoJsonCache={geoJsonCache} />
 				</div>
 			</div>
 		</div>
