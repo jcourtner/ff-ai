@@ -5,9 +5,10 @@ import { Button, Flex } from '@chakra-ui/react';
 
 interface HeaderProps {
 	showMap: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	activeLayers: { [key: string]: boolean };
 }
 
-const Header: React.FC<HeaderProps> = ({ showMap }) => {
+const Header = ({ showMap, activeLayers }: HeaderProps) => {
 	return (
 		<div>
 			<h2>Testing my h2</h2>
@@ -21,8 +22,8 @@ const Header: React.FC<HeaderProps> = ({ showMap }) => {
 				<Button
 					mr={4}
 					size='sm'
-					variant='surface'
-					colorPalette='gray.400'
+					variant={activeLayers.kearney_poi ? 'solid' : 'outline'}
+					colorScheme='gray'
 					id='kearney_poi'
 					onClick={showMap}
 				>
@@ -30,8 +31,8 @@ const Header: React.FC<HeaderProps> = ({ showMap }) => {
 				</Button>
 				<Button
 					size='sm'
-					variant='surface'
-					colorPalette='gray.400'
+					variant={activeLayers.kearney_roads ? 'solid' : 'outline'}
+					colorScheme='gray'
 					id='kearney_roads'
 					onClick={showMap}
 				>

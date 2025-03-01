@@ -5,11 +5,15 @@ import mapboxgl from 'mapbox-gl';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-function Mapbox() {
+interface MapProps {
+	activeLayers: { [key: string]: boolean };
+	geoJsonCache: { [key: string]: any };
+}
+function Mapbox({ activeLayers, geoJsonCache }: MapProps) {
 	const mapRef = useRef();
 
 	const mapContainerRef = useRef();
-
+	// instantiate Mapbox
 	useEffect(() => {
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoiamNvdXJ0bmVyOTciLCJhIjoiY203aG81cDhiMGs3NjJrb2o4bmxzZ2RvNSJ9.n1R4Gb6JcIkB5PojKA-Caw';
@@ -23,6 +27,11 @@ function Mapbox() {
 			mapRef.current.remove();
 		};
 	}, []);
+
+	// watch for changes in activeLayers or the geoJsonCache
+	useEffect(() => {
+		console.log('inside use effect in mapbox for active changes');
+	}, [activeLayers, geoJsonCache]);
 
 	return (
 		<>
