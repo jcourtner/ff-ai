@@ -1,9 +1,10 @@
-import Mapbox from '@/components/map';
+// import Mapbox from '@/components/map';
+import { Box } from '@chakra-ui/react';
 
 function Test() {
 	return (
 		<>
-			<Mapbox />
+			<Box backgroundColor='cyan.600'>hi there i'm jennifer</Box>
 		</>
 	);
 }

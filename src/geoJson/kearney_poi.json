@@ -1,0 +1,823 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-02-20T22:54:03Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/77095964",
+        "ele": "669",
+        "gnis:feature_id": "1875239",
+        "leisure": "park",
+        "name": "Apollo Park",
+        "source": "USGS NAIP imagery",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0902693,
+          40.7094023
+        ]
+      },
+      "id": "way/77095964"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/77095965",
+        "ele": "654",
+        "gnis:feature_id": "828860",
+        "leisure": "park",
+        "name": "Dryden Park",
+        "source": "USGS NAIP imagery",
+        "wikidata": "Q49484318",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0720075,
+          40.7059053
+        ]
+      },
+      "id": "way/77095965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/77095975",
+        "ele": "654",
+        "gnis:feature_id": "828272",
+        "leisure": "park",
+        "name": "Collins Park",
+        "source": "USGS NAIP imagery",
+        "wikidata": "Q49479169",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0753647,
+          40.6897101
+        ]
+      },
+      "id": "way/77095975"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/140213931",
+        "addr:city": "Kearney",
+        "addr:country": "US",
+        "addr:housenumber": "3060",
+        "addr:postcode": "68847",
+        "addr:state": "NE",
+        "addr:street": "East 1st Street",
+        "building": "yes",
+        "fax": "+1-308-338-0411",
+        "layer": "1",
+        "name": "The Great Platte River Road Archway",
+        "phone": "+1-308-237-1000",
+        "phone:tollfree": "+1-877-511-ARCH",
+        "source:outline": "bing",
+        "tourism": "attraction",
+        "website": "https://archway.org/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0384658,
+          40.6699723
+        ]
+      },
+      "id": "way/140213931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150583945",
+        "amenity": "school",
+        "name": "Windy Hils Elementary School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1086227,
+          40.7174203
+        ]
+      },
+      "id": "way/150583945"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150587422",
+        "ele": "676",
+        "gnis:feature_id": "1875240",
+        "leisure": "park",
+        "name": "Ted Baldwin Park",
+        "wikidata": "Q49569434",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1101981,
+          40.7191827
+        ]
+      },
+      "id": "way/150587422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150587556",
+        "leisure": "park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1100318,
+          40.7178452
+        ]
+      },
+      "id": "way/150587556"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150588316",
+        "amenity": "school",
+        "name": "Kenwood Elementary School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1012841,
+          40.683669
+        ]
+      },
+      "id": "way/150588316"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150588317",
+        "leisure": "park",
+        "wikidata": "Q34886880",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0672145,
+          40.7156799
+        ]
+      },
+      "id": "way/150588317"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150625911",
+        "amenity": "school",
+        "name": "Sunrise Middle School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.062605,
+          40.7200344
+        ]
+      },
+      "id": "way/150625911"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150627717",
+        "leisure": "park",
+        "name": "Centennial Park",
+        "wikidata": "Q34917630",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0912604,
+          40.6862153
+        ]
+      },
+      "id": "way/150627717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150673568",
+        "leisure": "park",
+        "wikidata": "Q49543396",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0920128,
+          40.6962253
+        ]
+      },
+      "id": "way/150673568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150674559",
+        "gnis:feature_id": "829809",
+        "leisure": "park",
+        "name": "Harmon Park",
+        "wikidata": "Q49498116",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0896579,
+          40.7065836
+        ]
+      },
+      "id": "way/150674559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150674562",
+        "amenity": "school",
+        "name": "Park School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0903928,
+          40.7056544
+        ]
+      },
+      "id": "way/150674562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150675338",
+        "leisure": "park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0674437,
+          40.6874945
+        ]
+      },
+      "id": "way/150675338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150675808",
+        "ele": "665",
+        "gnis:feature_id": "1875237",
+        "leisure": "park",
+        "name": "West Lincolnway Park",
+        "wikidata": "Q49578758",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1212084,
+          40.6967194
+        ]
+      },
+      "id": "way/150675808"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150707193",
+        "addr:city": "Kearney",
+        "addr:state": "NE",
+        "leisure": "park",
+        "name": "Meadowlark North Park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1268772,
+          40.7113747
+        ]
+      },
+      "id": "way/150707193"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150711204",
+        "addr:city": "Kearney",
+        "addr:housenumber": "2802",
+        "addr:postcode": "68845",
+        "addr:state": "NE",
+        "addr:street": "30th Avenue",
+        "amenity": "school",
+        "name": "Youth Rehabilitation and Treatment Center - Kearney",
+        "operator": "State of Nebraska Department of Health and Human Services",
+        "phone": "(308) 865-5313",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1238774,
+          40.7057052
+        ]
+      },
+      "id": "way/150711204"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/150846440",
+        "leisure": "park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1069392,
+          40.6809777
+        ]
+      },
+      "id": "way/150846440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/151363645",
+        "amenity": "school",
+        "name": "First Baptist Church",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0929758,
+          40.7120628
+        ]
+      },
+      "id": "way/151363645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/151363646",
+        "gnis:feature_id": "831205",
+        "leisure": "park",
+        "name": "Memorial Diamond Park",
+        "wikidata": "Q49524682",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0928229,
+          40.7092388
+        ]
+      },
+      "id": "way/151363646"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/152531076",
+        "amenity": "school",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0786973,
+          40.7121015
+        ]
+      },
+      "id": "way/152531076"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/152532488",
+        "addr:city": "Kearney",
+        "addr:housenumber": "10",
+        "addr:postcode": "68847",
+        "addr:street": "East 31st Street",
+        "amenity": "hospital",
+        "emergency": "yes",
+        "gnis:feature_id": "1875166",
+        "healthcare": "hospital",
+        "name": "CHI Health Good Samaritan",
+        "old_name": "Good Samaritan Hospital",
+        "operator": "Catholic Health Initiatives",
+        "operator:short": "CHI",
+        "operator:wikidata": "Q5053168",
+        "operator:wikipedia": "en:Catholic Health Initiatives",
+        "phone": "+1 308 865 7100",
+        "website": "http://chihealthgoodsamaritan.org/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0814427,
+          40.7083626
+        ]
+      },
+      "id": "way/152532488"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/161683805",
+        "addr:city": "Kearney",
+        "addr:housenumber": "3807",
+        "addr:postcode": "68847",
+        "addr:state": "NE",
+        "addr:street": "Avenue N",
+        "leisure": "park",
+        "name": "Buffalo County Fairgrounds",
+        "phone": "308-236-1201",
+        "website": "https://buffalocountyfairgrounds.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.061465,
+          40.7114713
+        ]
+      },
+      "id": "way/161683805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/191819665",
+        "addr:state": "NE",
+        "amenity": "library",
+        "building": "yes",
+        "ele": "662",
+        "gnis:feature_id": "1875267",
+        "import_uuid": "gnis.57871b70-0100-4405-bb30-88b2e001a944",
+        "name": "Calvin T Ryan Library",
+        "source": "USGS Geonames",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.096793,
+          40.7005671
+        ]
+      },
+      "id": "way/191819665"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/193151052",
+        "addr:city": "Kearney",
+        "addr:housenumber": "1013",
+        "addr:postcode": "68845",
+        "addr:state": "NE",
+        "addr:street": "West 27th Street",
+        "building": "public",
+        "building:levels": "2",
+        "ele": "666",
+        "name": "Nebraskan Student Union",
+        "operator": "University of Nebraska Kearney",
+        "ref": "NSU",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0959354,
+          40.7030086
+        ]
+      },
+      "id": "way/193151052"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/288562714",
+        "leisure": "park",
+        "name": "Fountain Hills Park",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0966859,
+          40.719882
+        ]
+      },
+      "id": "way/288562714"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/334903852",
+        "leisure": "park",
+        "name": "Spillway Park",
+        "source": "City of Kearney",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1022598,
+          40.70326
+        ]
+      },
+      "id": "way/334903852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/379695258",
+        "addr:city": "Kearney",
+        "addr:housenumber": "710",
+        "addr:postcode": "68848",
+        "addr:state": "NE",
+        "addr:street": "West 11th Street",
+        "area": "yes",
+        "ele": "654",
+        "gnis:feature_id": "1875191",
+        "name": "Trails and Rails Museum",
+        "opening_hours:url": "https://www.bchs.us/",
+        "source": "USGS Geonames",
+        "tourism": "museum",
+        "website": "https://www.bchs.us/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0922076,
+          40.6844189
+        ]
+      },
+      "id": "way/379695258"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/397550095",
+        "amenity": "school",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.066871,
+          40.7274719
+        ]
+      },
+      "id": "way/397550095"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/397550096",
+        "amenity": "school",
+        "name": "Buffalo Hills Elementary School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0980135,
+          40.7337546
+        ]
+      },
+      "id": "way/397550096"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/421567214",
+        "name": "Elizabeth Thomsic Hillard Memorial Labyrinth",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1079333,
+          40.6824091
+        ]
+      },
+      "id": "way/421567214"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/446124561",
+        "addr:city": "Kearney",
+        "addr:housenumber": "2705",
+        "addr:postcode": "68847",
+        "addr:street": "Avenue E",
+        "amenity": "school",
+        "name": "Emerson Elementary School",
+        "phone": "+1 308 698 8270",
+        "website": "https://www.kearneypublicschools.org/schools/elementary-schools/emerson-elementary/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.073974,
+          40.7028899
+        ]
+      },
+      "id": "way/446124561"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/572422664",
+        "addr:city": "Kearney",
+        "addr:housenumber": "2401",
+        "addr:postcode": "68847",
+        "addr:state": "NE",
+        "addr:street": "Central Avenue",
+        "building": "yes",
+        "ele": "656",
+        "gnis:feature_id": "1875192",
+        "import_uuid": "gnis.57871b70-0100-4405-bb30-88b2e001a944",
+        "name": "Museum of Nebraska Art",
+        "source": "USGS Geonames",
+        "tourism": "museum",
+        "website": "https://mona.unk.edu/mona/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0810916,
+          40.6996235
+        ]
+      },
+      "id": "way/572422664"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/591279985",
+        "addr:city": "Kearney",
+        "addr:housenumber": "804",
+        "addr:postcode": "68845",
+        "addr:street": "22nd Avenue",
+        "amenity": "hospital",
+        "beds": "93",
+        "emergency": "yes",
+        "healthcare": "hospital",
+        "name": "Kearney Regional Medical Center",
+        "opening_hours": "24/7",
+        "phone": "+1 308 455 3600",
+        "short_name": "KRMC",
+        "website": "https://www.kearneyregional.com/",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1125101,
+          40.6823242
+        ]
+      },
+      "id": "way/591279985"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1031866639",
+        "amenity": "school",
+        "name": "Kearney High School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.1208271,
+          40.6831946
+        ]
+      },
+      "id": "way/1031866639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1038108504",
+        "addr:city": "Kearney",
+        "addr:housenumber": "500",
+        "addr:postcode": "68845",
+        "addr:state": "NE",
+        "addr:street": "West 4th Street",
+        "building": "retail",
+        "name": "Big Apple Fun Center",
+        "tourism": "attraction",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0894336,
+          40.6777935
+        ]
+      },
+      "id": "way/1038108504"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1049374618",
+        "addr:city": "Kearney",
+        "addr:housenumber": "131",
+        "addr:postcode": "68847",
+        "addr:state": "NE",
+        "addr:street": "Central Avenue",
+        "building": "yes",
+        "name": "Fort Kearney Museum",
+        "tourism": "museum",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0820406,
+          40.6737149
+        ]
+      },
+      "id": "way/1049374618"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1196046717",
+        "building": "yes",
+        "name": "Nebraska Firefighters Museum & Education Center",
+        "tourism": "museum",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.045505,
+          40.6708183
+        ]
+      },
+      "id": "way/1196046717"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1354948872",
+        "addr:city": "Kearney",
+        "addr:housenumber": "910",
+        "addr:postcode": "68847",
+        "addr:state": "NE",
+        "addr:street": "East 34th Street",
+        "amenity": "school",
+        "ele": "656",
+        "gnis:feature_id": "831754",
+        "name": "Northeast Elementary School",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.0687406,
+          40.7101326
+        ]
+      },
+      "id": "way/1354948872"
+    }
+  ]
+}
