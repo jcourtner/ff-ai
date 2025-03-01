@@ -16,8 +16,7 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 
 	// instantiate Mapbox
 	useEffect(() => {
-		mapboxgl.accessToken =
-			'pk.eyJ1IjoiamNvdXJ0bmVyOTciLCJhIjoiY203aG81cDhiMGs3NjJrb2o4bmxzZ2RvNSJ9.n1R4Gb6JcIkB5PojKA-Caw';
+		mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_PUBLIC_TOKEN;
 		mapRef.current = new mapboxgl.Map({
 			container: mapContainerRef.current,
 			center: [-99.0817, 40.6993],
@@ -87,7 +86,7 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 							paint: {
 								// Customize based on layer type
 								'circle-radius': 6,
-								'circle-color': getColorForLayer(sourceName),
+								'circle-color': '#a855f7',
 							},
 						});
 					} else if (sourceName === 'kearney_roads') {
@@ -96,26 +95,20 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 							type: 'line', // Modify based on your data type (point, line, polygon)
 							source: sourceName,
 						});
+					} else {
+						map.addLayer({
+							id: `${sourceName}-layer`,
+							type: 'circle', // Modify based on your data type (point, line, polygon)
+							source: sourceName,
+							paint: {
+								// Customize based on layer type
+								'circle-radius': 6,
+								'circle-color': '#a855f7',
+							},
+						});
 					}
 				}
 			});
-		};
-
-		// Helper function to assign different colors to different layers
-		const getColorForLayer = (layerId: string) => {
-			// Simple hash function to generate colors based on layer ID
-			const colors = [
-				'#ff0000',
-				'#00ff00',
-				'#0000ff',
-				'#ffff00',
-				'#00ffff',
-				'#ff00ff',
-			];
-			const hash = layerId.split('').reduce((acc, char) => {
-				return char.charCodeAt(0) + ((acc << 5) - acc);
-			}, 0);
-			return colors[Math.abs(hash) % colors.length];
 		};
 
 		// If map is already loaded, update layers immediately
