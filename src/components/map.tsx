@@ -13,6 +13,7 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 	const mapRef = useRef();
 	const mapContainerRef = useRef();
 	const activeSourcesRef = useRef<Set<string>>(new Set());
+	// const popRef = userRef(null);
 
 	// instantiate Mapbox
 	useEffect(() => {
@@ -108,6 +109,20 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 						});
 					}
 				}
+				// if (
+				// 	activeSourcesRef.current.kearney_poi &&
+				// 	map.getLayer('kearney_poi-layer')
+				// ) {
+				// 	// put the popover here
+				// 	if (popRef === null) {
+				// 		const popup = new mapboxgl.Popup({
+				// 			closeButton: false,
+				// 			closeOnClick: false,
+				// 			className: 'poi-popup',
+				// 		});
+				// 		popupRef.current = popup;
+				// 	}
+				// }
 			});
 		};
 

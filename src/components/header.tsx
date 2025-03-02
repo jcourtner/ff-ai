@@ -16,7 +16,7 @@ const Header = ({ showMap, activeSources }: HeaderProps) => {
 					mr={4}
 					size='sm'
 					variant={activeSources.kearney_poi ? 'solid' : 'outline'}
-					colorScheme='gray'
+					colorScheme='purple'
 					id='kearney_poi'
 					onClick={showMap}
 				>
@@ -25,7 +25,7 @@ const Header = ({ showMap, activeSources }: HeaderProps) => {
 				<Button
 					size='sm'
 					variant={activeSources.kearney_roads ? 'solid' : 'outline'}
-					colorScheme='gray'
+					colorScheme='purple'
 					id='kearney_roads'
 					onClick={showMap}
 				>

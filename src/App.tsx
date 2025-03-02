@@ -15,6 +15,11 @@ function Home() {
 		[key: string]: boolean;
 	}>({ kearney_poi: false, kearney_roads: false });
 
+	//location that is currently clicked -- what do we want to store?
+	const [selectedLocation, setSelectedLocation] = useState<{
+		[key: string]: any;
+	}>({});
+
 	const fetchData = async (source: string) => {
 		try {
 			const url = `./src/geoJson/${source}.json`;
@@ -46,15 +51,25 @@ function Home() {
 		}
 	};
 
+	// const handleSourceClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
+	// 	const currSource = event.currentTarget.id;
+
+	// 	console.log('current source clicked', currSource);
+	// };
+
 	return (
 		<div className='app-container'>
 			<Header showMap={handleClick} activeSources={activeSource} />
 			<div className='content-container'>
-				{activeSource.kearney_poi && (
+				{activeSource.kearney_poi && geoJsonCache.kearney_poi ? (
 					<div className='table-container'>
-						<DataTable />
+						<DataTable geoJsonCache={geoJsonCache.kearney_poi} />
 					</div>
-				)}
+				) : activeSource.kearney_poi ? (
+					<div className='table-container'>
+						<p>Loading data...</p>
+					</div>
+				) : null}
 				<div className='map-container'>
 					<Mapbox activeSources={activeSource} geoJsonCache={geoJsonCache} />
 				</div>

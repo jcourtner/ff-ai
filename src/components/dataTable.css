@@ -1,0 +1,12 @@
+.data-table-container {
+	display: flex;
+	flex-direction: column;
+	height: 100%; /* Take full height of parent */
+	overflow: hidden; /* Prevent overflow at container level */
+}
+
+.data-table-scroll {
+	overflow-y: auto; /* Enable vertical scrolling */
+	max-height: calc(100vh - 130px); /* Adjust based on your header/margins */
+	padding-right: 10px; /* Gives space for the scrollbar */
+}
