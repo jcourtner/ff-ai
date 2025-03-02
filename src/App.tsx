@@ -9,41 +9,75 @@ import Mapbox from './components/map';
 import './App.css';
 
 function Home() {
-	const [activeMap, setActiveMap] = useState<string | null>(null);
-	const [currentData, setCurrentData] = useState<T | null>(null);
+	const [geoJsonCache, setGeoJsonCache] = useState<{ [key: string]: any }>({});
+
+	const [activeSource, setActiveSource] = useState<{
+		[key: string]: boolean;
+	}>({ kearney_poi: false, kearney_roads: false });
+
+	//location that is currently clicked -- what do we want to store?
+	const [selectedLocation, setSelectedLocation] = useState<{
+		[key: string]: any;
+	}>({});
+	const [currentCoord, setCurrentCoord] = useState<[number, number]>(null);
+
+	const fetchData = async (source: string) => {
+		try {
+			const url = `./src/geoJson/${source}.json`;
+			const response = await fetch(url);
+			if (!response) throw new Error('network error');
+
+			const sourceData = await response.json();
+
+			setGeoJsonCache((prev) => ({
+				...prev,
+				[source]: sourceData,
+			}));
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
+	const handleItemClick = async (coordinates) => {
+		// do something here
+		console.log('inside handle item click -- expect coordinates', coordinates);
+		setCurrentCoord(coordinates);
+	};
 
 	const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-		await setActiveMap(event.target.id);
+		const currSource = event.target.id;
+		const isActive = activeSource[currSource] ? false : true;
+
+		setActiveSource((prev) => ({ ...prev, [currSource]: isActive }));
+
+		// check if geoJson is already in the cache
+		if (isActive === true && !geoJsonCache[currSource]) {
+			await fetchData(currSource);
+		}
 	};
-	console.log('current active map after button click', activeMap);
-	useEffect(() => {
-		if (!activeMap) return;
-		const fetchData = async () => {
-			try {
-				const url = `./src/geoJson/${activeMap}.json`;
-				console.log('url');
-				const response = await fetch(url);
-				if (!response.ok) throw new Error('Network error');
-				console.log('respnse', response);
-				const result: T = await response.json();
-				console.log('resulting json', result);
-				setCurrentData(result);
-			} catch (error) {
-				console.error('Fetch error:', error);
-			}
-		};
-		fetchData();
-	}, [activeMap]);
 
 	return (
 		<div className='app-container'>
-			<Header showMap={handleClick} />
+			<Header showMap={handleClick} activeSources={activeSource} />
 			<div className='content-container'>
-				<div className='table-container'>
-					<DataTable />
-				</div>
+				{activeSource.kearney_poi && geoJsonCache.kearney_poi ? (
+					<div className='table-container'>
+						<DataTable
+							geoJsonCache={geoJsonCache.kearney_poi}
+							handleItemClick={handleItemClick}
+						/>
+					</div>
+				) : activeSource.kearney_poi ? (
+					<div className='table-container'>
+						<p>Loading data...</p>
+					</div>
+				) : null}
 				<div className='map-container'>
-					<Mapbox />
+					<Mapbox
+						activeSources={activeSource}
+						geoJsonCache={geoJsonCache}
+						flyToCoord={currentCoord}
+					/>
 				</div>
 			</div>
 		</div>
