@@ -19,6 +19,7 @@ function Home() {
 	const [selectedLocation, setSelectedLocation] = useState<{
 		[key: string]: any;
 	}>({});
+	const [currentCoord, setCurrentCoord] = useState<[number, number]>(null);
 
 	const fetchData = async (source: string) => {
 		try {
@@ -28,8 +29,6 @@ function Home() {
 
 			const sourceData = await response.json();
 
-			console.log('successful fetch, geoJson data', sourceData);
-
 			setGeoJsonCache((prev) => ({
 				...prev,
 				[source]: sourceData,
@@ -37,6 +36,12 @@ function Home() {
 		} catch (err) {
 			console.log(err);
 		}
+	};
+
+	const handleItemClick = async (coordinates) => {
+		// do something here
+		console.log('inside handle item click -- expect coordinates', coordinates);
+		setCurrentCoord(coordinates);
 	};
 
 	const handleClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -51,19 +56,16 @@ function Home() {
 		}
 	};
 
-	// const handleSourceClick = async (event: React.MouseEvent<HTMLButtonElement>) => {
-	// 	const currSource = event.currentTarget.id;
-
-	// 	console.log('current source clicked', currSource);
-	// };
-
 	return (
 		<div className='app-container'>
 			<Header showMap={handleClick} activeSources={activeSource} />
 			<div className='content-container'>
 				{activeSource.kearney_poi && geoJsonCache.kearney_poi ? (
 					<div className='table-container'>
-						<DataTable geoJsonCache={geoJsonCache.kearney_poi} />
+						<DataTable
+							geoJsonCache={geoJsonCache.kearney_poi}
+							handleItemClick={handleItemClick}
+						/>
 					</div>
 				) : activeSource.kearney_poi ? (
 					<div className='table-container'>
@@ -71,7 +73,11 @@ function Home() {
 					</div>
 				) : null}
 				<div className='map-container'>
-					<Mapbox activeSources={activeSource} geoJsonCache={geoJsonCache} />
+					<Mapbox
+						activeSources={activeSource}
+						geoJsonCache={geoJsonCache}
+						flyToCoord={currentCoord}
+					/>
 				</div>
 			</div>
 		</div>

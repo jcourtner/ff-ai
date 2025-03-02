@@ -8,12 +8,12 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 interface MapProps {
 	activeSources: { [key: string]: boolean };
 	geoJsonCache: { [key: string]: any };
+	flyToCoord: [number, number] | null;
 }
-function Mapbox({ activeSources, geoJsonCache }: MapProps) {
+function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 	const mapRef = useRef();
 	const mapContainerRef = useRef();
 	const activeSourcesRef = useRef<Set<string>>(new Set());
-	// const popRef = userRef(null);
 
 	// instantiate Mapbox
 	useEffect(() => {
@@ -109,20 +109,6 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 						});
 					}
 				}
-				// if (
-				// 	activeSourcesRef.current.kearney_poi &&
-				// 	map.getLayer('kearney_poi-layer')
-				// ) {
-				// 	// put the popover here
-				// 	if (popRef === null) {
-				// 		const popup = new mapboxgl.Popup({
-				// 			closeButton: false,
-				// 			closeOnClick: false,
-				// 			className: 'poi-popup',
-				// 		});
-				// 		popupRef.current = popup;
-				// 	}
-				// }
 			});
 		};
 
@@ -145,6 +131,17 @@ function Mapbox({ activeSources, geoJsonCache }: MapProps) {
 			}
 		};
 	}, [activeSources, geoJsonCache]);
+
+	useEffect(() => {
+		const map = mapRef.current;
+		if (flyToCoord !== null) {
+			map.flyTo({
+				center: flyToCoord,
+				essential: true,
+				zoom: 17,
+			});
+		}
+	}, [flyToCoord]);
 
 	return (
 		<>
