@@ -21,7 +21,7 @@ const Header = ({ showMap, activeSources }: HeaderProps) => {
 						showMap('kearney_poi');
 					}}
 				>
-					Button 1
+					Kearney POI Map
 				</Button>
 				<Button
 					size='sm'
@@ -32,7 +32,7 @@ const Header = ({ showMap, activeSources }: HeaderProps) => {
 						showMap('kearney_roads');
 					}}
 				>
-					Button 2
+					Kearney Roads Map
 				</Button>
 			</Flex>
 		</div>
