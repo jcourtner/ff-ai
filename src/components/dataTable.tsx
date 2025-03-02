@@ -1,7 +1,7 @@
 import { Card, Stack } from '@chakra-ui/react';
 
 interface DataTableProps {
-	geoJsonCache: { [key: string]: any };
+	geoJsonCache: { [key: string]: GeoData };
 	handleItemClick: (coordinates: [number, number]) => void;
 }
 
@@ -16,6 +16,13 @@ const DataTable = ({ geoJsonCache, handleItemClick }: DataTableProps) => {
 				handleItemClick(place?.geometry?.coordinates);
 			}}
 			key={place.id}
+			bg='purple.200'
+			_hover={{
+				bg: 'purple.400',
+				borderColor: 'blue.500', // Blue border on hover
+				boxShadow: 'md', // Add shadow on hover
+			}}
+			_active={{ bg: 'purple.500' }}
 		>
 			<Card.Title>{place.properties.name}</Card.Title>
 		</Card.Root>
