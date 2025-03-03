@@ -1,7 +1,8 @@
 import { Card, Stack } from '@chakra-ui/react';
+import { GeoJSON } from '../types/geoJson';
 
 interface DataTableProps {
-	geoJsonCache: { [key: string]: GeoData };
+	geoJsonCache: { [key: string]: GeoJSON };
 	handleItemClick: (coordinates: [number, number]) => void;
 }
 

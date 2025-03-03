@@ -2,12 +2,13 @@
 
 import { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import { GeoData } from '../types/geoJson';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapProps {
 	activeSources: { [key: string]: boolean };
-	geoJsonCache: { [key: string]: any };
+	geoJsonCache: { [key: string]: GeoData };
 	flyToCoord: [number, number] | null;
 }
 function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {

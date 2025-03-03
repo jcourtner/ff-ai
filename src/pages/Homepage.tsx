@@ -2,31 +2,7 @@ import { useState } from 'react';
 import Header from '../components/header';
 import DataTable from '../components/dataTable';
 import Mapbox from '../components/map';
-
-interface KearneyRoads {
-	type: 'MultiLineString';
-	coordinates: number[][][]; // Array of arrays of points, where each point is [longitude, latitude]
-}
-
-interface KearneyPoi {
-	type: 'Feature';
-	properties: {
-		[key: string]: any; // Accepts any properties
-	};
-	geometry: {
-		type: string; // "Point", "LineString", etc.
-		coordinates: any; // Any valid coordinates structure
-	};
-	id: string;
-}
-
-interface GeoJSON {
-	type: 'FeatureCollection';
-	features: KearneyPoi[];
-	[key: string]: any; // Any additional top-level properties
-}
-
-type GeoData = GeoJSON | KearneyRoads;
+import { GeoData } from '../types/geoJson';
 
 function Homepage() {
 	const [geoJsonCache, setGeoJsonCache] = useState<{ [key: string]: GeoData }>(
