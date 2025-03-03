@@ -1,10 +1,9 @@
 // src/Components/Header.jsx
 
-// import { Link } from 'react-router-dom';
 import { Button, Flex } from '@chakra-ui/react';
 
 interface HeaderProps {
-	showMap: (event: React.MouseEvent<HTMLButtonElement>) => void;
+	showMap: (mapName: string) => Promise<void>;
 	activeSources: { [key: string]: boolean };
 }
 
@@ -16,20 +15,28 @@ const Header = ({ showMap, activeSources }: HeaderProps) => {
 					mr={4}
 					size='sm'
 					variant={activeSources.kearney_poi ? 'solid' : 'outline'}
-					colorScheme='purple'
+					bg='purple.200'
+					_hover={{ bg: 'purple.400' }}
+					_active={{ bg: 'purple.500' }}
 					id='kearney_poi'
-					onClick={showMap}
+					onClick={() => {
+						showMap('kearney_poi');
+					}}
 				>
-					Button 1
+					Kearney POI Map
 				</Button>
 				<Button
 					size='sm'
 					variant={activeSources.kearney_roads ? 'solid' : 'outline'}
-					colorScheme='purple'
+					bg='purple.200'
+					_hover={{ bg: 'purple.400' }}
+					_active={{ bg: 'purple.500' }}
 					id='kearney_roads'
-					onClick={showMap}
+					onClick={() => {
+						showMap('kearney_roads');
+					}}
 				>
-					Button 2
+					Kearney Roads Map
 				</Button>
 			</Flex>
 		</div>

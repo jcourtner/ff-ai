@@ -2,12 +2,13 @@
 
 import { useRef, useEffect } from 'react';
 import mapboxgl from 'mapbox-gl';
+import { GeoData } from '../types/geoJson';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 interface MapProps {
 	activeSources: { [key: string]: boolean };
-	geoJsonCache: { [key: string]: any };
+	geoJsonCache: { [key: string]: GeoData };
 	flyToCoord: [number, number] | null;
 }
 function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
@@ -31,11 +32,11 @@ function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 
 	// watch for changes in activeLayers or the geoJsonCache
 	useEffect(() => {
-		console.log('inside use effect in mapbox for active changes');
 		const map = mapRef.current;
 		if (!map || !map.loaded()) return;
 
-		// Function to handle active and inactive sources and layers
+		// loop through activeSources from homepage (updated by the button clicks)
+		// push the current active sources into a new array to track
 		const updateSources = () => {
 			const currentActiveSources = [];
 			for (const key in activeSources) {
@@ -45,13 +46,9 @@ function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 				}
 			}
 
-			// loop through activeSourcesRef set and delete the spurces no longer active and once it's updated we will render only what's
-			// active and set new sources and layers
-			// Remove layers that are no longer active
+			// loop through activeSourcesRef
+			// if the active sources array does not include the current source in the ref and the map has that source already displayed, then remove the layer and the source from the map and delete it from the activeSourcesRef
 			activeSourcesRef.current.forEach((source) => {
-				// check mapName if in activeLayersRef as current
-				// if the current active sources does not include the current source that we are looping through in the activesource ref
-				// AND the source exists on the map -- then delete the source from the map and the layers associated with it as well as in the active Sources ref
 				if (!currentActiveSources.includes(source) && map.getSource(source)) {
 					// Remove the layer first (if it exists)
 					if (map.getLayer(`${source}-layer`)) {
@@ -63,7 +60,7 @@ function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 				}
 			});
 
-			// loop through active sources array and Add/update active layers
+			// loop through active sources array and Add/update active layers that have been added
 			currentActiveSources.forEach((sourceName) => {
 				const geoJsonData = geoJsonCache[sourceName];
 				if (!geoJsonData) return; // Skip if no data available
@@ -75,17 +72,16 @@ function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 						data: geoJsonData,
 					});
 
-					// Track this source as added
+					// Add new source to activeSourcesRef
 					activeSourcesRef.current.add(sourceName);
 
 					// Add a new layer for this source
 					if (sourceName === 'kearney_poi') {
 						map.addLayer({
 							id: `${sourceName}-layer`,
-							type: 'circle', // Modify based on your data type (point, line, polygon)
+							type: 'circle',
 							source: sourceName,
 							paint: {
-								// Customize based on layer type
 								'circle-radius': 6,
 								'circle-color': '#a855f7',
 							},
@@ -93,16 +89,15 @@ function Mapbox({ activeSources, geoJsonCache, flyToCoord }: MapProps) {
 					} else if (sourceName === 'kearney_roads') {
 						map.addLayer({
 							id: `${sourceName}-layer`,
-							type: 'line', // Modify based on your data type (point, line, polygon)
+							type: 'line',
 							source: sourceName,
 						});
 					} else {
 						map.addLayer({
 							id: `${sourceName}-layer`,
-							type: 'circle', // Modify based on your data type (point, line, polygon)
+							type: 'circle',
 							source: sourceName,
 							paint: {
-								// Customize based on layer type
 								'circle-radius': 6,
 								'circle-color': '#a855f7',
 							},
